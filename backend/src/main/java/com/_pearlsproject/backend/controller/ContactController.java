@@ -136,4 +136,19 @@ public class ContactController {
         logger.info("Contact updated successfully with ID: {}", savedContact.getId());
         return new ContactDTO(savedContact);
     }
+
+    // Delete a contact by ID
+    @DeleteMapping("/{id}")
+    public void deleteContact(@PathVariable Long id, @AuthenticationPrincipal User user) {
+        logger.info("Deleting contact with ID: {} for user: {}", id, user.getEmail());
+
+        // Ensure the contact exists and belongs to the current user
+        Contact contact = contactRepository.findById(id)
+                .filter(c -> c.getUser().getId().equals(user.getId()))
+                .orElseThrow(() -> new ContactNotFoundException(id));
+
+        contactRepository.delete(contact); // Delete the contact
+        logger.info("Contact with ID: {} deleted successfully.", id);
+    }
+
 }
