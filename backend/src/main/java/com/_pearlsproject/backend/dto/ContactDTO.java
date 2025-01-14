@@ -7,6 +7,8 @@ public class ContactDTO {
     private String email;
     private long phone;
     private String address;
+    private String image; // Add image URL
+    private boolean isFavourite; // Add favourite status
 
     // Constructor to map `Contact` to `ContactDTO`
     public ContactDTO(Contact contact) {
@@ -14,6 +16,8 @@ public class ContactDTO {
         this.email = contact.getEmail();
         this.phone = contact.getPhone();
         this.address = contact.getAddress();
+        this.image = contact.getImage();
+        this.isFavourite = contact.isFavourite();
     }
 
     // Getters and Setters
@@ -31,5 +35,13 @@ public class ContactDTO {
 
     public String getAddress() {
         return address;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public boolean isFavourite() {
+        return isFavourite;
     }
 }

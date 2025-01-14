@@ -14,6 +14,9 @@ public class Contact {
     private long phone;
     private String address;
 
+    private String image; // Store Cloudinary image URL
+    private boolean isFavourite = false; // Default value set to false
+
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
@@ -57,6 +60,22 @@ public class Contact {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public boolean isFavourite() {
+        return isFavourite;
+    }
+
+    public void setFavourite(boolean favourite) {
+        isFavourite = favourite;
     }
 
     public User getUser() {
