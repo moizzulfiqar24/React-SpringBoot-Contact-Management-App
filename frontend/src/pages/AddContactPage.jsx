@@ -51,7 +51,7 @@ const AddContactPage = () => {
                     pauseOnHover: true,
                     draggable: true,
                 });
-                navigate('/jobs');
+                navigate('/contacts');
             } else {
                 const errorData = await response.json();
                 throw new Error(errorData.message || 'Failed to add contact');

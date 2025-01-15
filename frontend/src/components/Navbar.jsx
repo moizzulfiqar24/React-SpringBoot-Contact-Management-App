@@ -30,10 +30,10 @@ const Navbar = () => {
                                 <NavLink to='/' className={linkClass}>
                                     Home
                                 </NavLink>
-                                <NavLink to='/jobs' className={linkClass}>
+                                <NavLink to='/contacts' className={linkClass}>
                                     All Contacts
                                 </NavLink>
-                                <NavLink to='/add-job' className={linkClass}>
+                                <NavLink to='/add-contact' className={linkClass}>
                                     Add Contact
                                 </NavLink>
                                 <button

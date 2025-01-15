@@ -188,7 +188,7 @@ const VerifyPage = () => {
                 <img
                     src={contactImage}
                     alt="Contacts Background"
-                    className="w-full h-full object-cover opacity-50"
+                    className="w-full h-full object-cover opacity-10"
                 />
             </div>
 

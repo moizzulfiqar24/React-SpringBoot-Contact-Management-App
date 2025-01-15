@@ -28,7 +28,7 @@ const ContactPage = () => {
             }
 
             toast.success('Contact deleted successfully');
-            navigate('/jobs');
+            navigate('/contacts');
         } catch (error) {
             toast.error(`Error: ${error.message}`);
         }
@@ -39,7 +39,7 @@ const ContactPage = () => {
             <section>
                 <div className="container m-auto py-6 px-6">
                     <Link
-                        to="/jobs"
+                        to="/contacts"
                         className="text-indigo-500 hover:text-indigo-600 flex items-center"
                     >
                         <FaArrowLeft className="mr-2" /> Back to Contact Listings
@@ -98,7 +98,7 @@ const ContactPage = () => {
                                 <h3 className="text-xl font-bold mb-6">Manage Contact</h3>
                                 <Link
                                     to={`/edit-contact/${contact.id}`}
-                                    className="bg-indigo-500 hover:bg-indigo-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
+                                    className="bg-black text-white hover:bg-indigo-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
                                 >
                                     Edit Contact
                                 </Link>
@@ -117,7 +117,7 @@ const ContactPage = () => {
     );
 };
 
-const jobLoader = async ({ params }) => {
+const contactLoader = async ({ params }) => {
     const token = localStorage.getItem('authToken'); // Authorization token
     const res = await fetch(`http://localhost:8080/contact/${params.id}`, {
         headers: {
@@ -133,4 +133,4 @@ const jobLoader = async ({ params }) => {
     return data;
 };
 
-export { ContactPage as default, jobLoader };
+export { ContactPage as default, contactLoader };

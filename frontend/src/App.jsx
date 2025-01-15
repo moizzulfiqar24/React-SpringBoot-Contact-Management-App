@@ -8,7 +8,7 @@ import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
 import ContactsPage from './pages/ContactsPage';
 import NotFoundPage from './pages/NotFoundPage';
-import ContactPage, { jobLoader } from './pages/ContactPage';
+import ContactPage, { contactLoader } from './pages/ContactPage';
 import AddContactPage from './pages/AddContactPage';
 import EditContactPage from './pages/EditContactPage';
 import RegisterPage from './pages/RegisterPage';
@@ -17,31 +17,6 @@ import LoginPage from './pages/LoginPage';
 import ProtectedRoute from './components/ProtectedRoute';
 
 const App = () => {
-  const addJob = async (newJob) => {
-    await fetch('/api/jobs', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(newJob),
-    });
-  };
-
-  const deleteJob = async (id) => {
-    await fetch(`/api/jobs/${id}`, {
-      method: 'DELETE',
-    });
-  };
-
-  const updateJob = async (job) => {
-    await fetch(`/api/jobs/${job.id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(job),
-    });
-  };
 
   const router = createBrowserRouter(
     createRoutesFromElements(
@@ -60,7 +35,7 @@ const App = () => {
 
         {/* Protected routes */}
         <Route
-          path="/jobs"
+          path="/contacts"
           element={
             <ProtectedRoute>
               <ContactsPage />
@@ -68,10 +43,10 @@ const App = () => {
           }
         />
         <Route
-          path="/add-job"
+          path="/add-contact"
           element={
             <ProtectedRoute>
-              <AddContactPage addJobSubmit={addJob} />
+              <AddContactPage />
             </ProtectedRoute>
           }
         />
@@ -79,19 +54,19 @@ const App = () => {
           path="/edit-contact/:id"
           element={
             <ProtectedRoute>
-              <EditContactPage updateJobSubmit={updateJob} />
+              <EditContactPage />
             </ProtectedRoute>
           }
-          loader={jobLoader}
+          loader={contactLoader}
         />
         <Route
           path="/contact/:id"
           element={
             <ProtectedRoute>
-              <ContactPage deleteJob={deleteJob} />
+              <ContactPage />
             </ProtectedRoute>
           }
-          loader={jobLoader}
+          loader={contactLoader}
         />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
