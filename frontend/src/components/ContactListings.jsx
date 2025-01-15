@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import JobListing from './JobListing'; // Reusing the same component name
+import ContactListing from './ContactListing'; // Reusing the same component name
 import Spinner from './Spinner';
 
-const JobListings = ({ isHome = false }) => {
+const ContactListings = ({ isHome = false }) => {
     const [contacts, setContacts] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -58,7 +58,7 @@ const JobListings = ({ isHome = false }) => {
                 ) : contacts.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {contacts.map((contact) => (
-                            <JobListing key={contact.email} contact={contact} />
+                            <ContactListing key={contact.email} contact={contact} />
                         ))}
                     </div>
                 ) : (
@@ -69,4 +69,4 @@ const JobListings = ({ isHome = false }) => {
     );
 };
 
-export default JobListings;
+export default ContactListings;

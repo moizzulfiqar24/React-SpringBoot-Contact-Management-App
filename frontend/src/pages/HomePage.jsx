@@ -1,15 +1,15 @@
 import Hero from '../components/Hero';
 import HomeCards from '../components/HomeCards';
-import JobListings from '../components/JobListings';
-import ViewAllJobs from '../components/ViewAllJobs';
+import ContactListings from '../components/ContactListings';
+import ViewAllContacts from '../components/ViewAllContacts';
 
 const HomePage = () => {
     return (
         <>
             <Hero />
             <HomeCards />
-            <JobListings isHome={true} />
-            <ViewAllJobs />
+            <ContactListings isHome={true} />
+            <ViewAllContacts />
         </>
     );
 };

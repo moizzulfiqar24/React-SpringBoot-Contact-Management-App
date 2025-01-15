@@ -148,7 +148,7 @@ const LoginPage = () => {
             localStorage.setItem('authToken', data.token);
 
             toast.success('Login successful! Redirecting to home...', {
-                position: 'top-center',
+                // position: 'top-center',
                 autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -161,7 +161,7 @@ const LoginPage = () => {
             }, 3000);
         } catch (error) {
             toast.error(`Error: ${error.message}`, {
-                position: 'top-center',
+                // position: 'top-center',
                 autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,

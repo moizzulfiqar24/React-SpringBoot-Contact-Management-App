@@ -182,7 +182,7 @@ const RegisterPage = () => {
 
             // Show success toast
             toast.success(`Registration successful! Please verify your account.`, {
-                position: "top-center",
+                // position: "top-center",
                 autoClose: 3000, // 3 seconds
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -198,7 +198,7 @@ const RegisterPage = () => {
 
         } catch (error) {
             toast.error(error.message, {
-                position: "top-center",
+                // position: "top-center",
                 autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,

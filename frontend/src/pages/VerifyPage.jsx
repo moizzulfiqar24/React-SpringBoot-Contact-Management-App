@@ -156,7 +156,7 @@ const VerifyPage = () => {
 
             // Success toast and redirect to login
             toast.success('Account verified successfully! Redirecting to login...', {
-                position: "top-center",
+                // position: "top-center",
                 autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
@@ -170,7 +170,7 @@ const VerifyPage = () => {
             }, 3000);
         } catch (error) {
             toast.error(`Verification failed: ${error.message}`, {
-                position: "top-center",
+                // position: "top-center",
                 autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,

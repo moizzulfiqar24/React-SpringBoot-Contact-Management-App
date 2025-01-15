@@ -6,11 +6,11 @@ import {
 } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
-import JobsPage from './pages/JobsPage';
+import ContactsPage from './pages/ContactsPage';
 import NotFoundPage from './pages/NotFoundPage';
-import JobPage, { jobLoader } from './pages/JobPage';
-import AddJobPage from './pages/AddJobPage';
-import EditJobPage from './pages/EditJobPage';
+import ContactPage, { jobLoader } from './pages/ContactPage';
+import AddContactPage from './pages/AddContactPage';
+import EditContactPage from './pages/EditContactPage';
 import RegisterPage from './pages/RegisterPage';
 import VerifyPage from './pages/VerifyPage';
 import LoginPage from './pages/LoginPage';
@@ -63,7 +63,7 @@ const App = () => {
           path="/jobs"
           element={
             <ProtectedRoute>
-              <JobsPage />
+              <ContactsPage />
             </ProtectedRoute>
           }
         />
@@ -71,7 +71,7 @@ const App = () => {
           path="/add-job"
           element={
             <ProtectedRoute>
-              <AddJobPage addJobSubmit={addJob} />
+              <AddContactPage addJobSubmit={addJob} />
             </ProtectedRoute>
           }
         />
@@ -79,7 +79,7 @@ const App = () => {
           path="/edit-contact/:id"
           element={
             <ProtectedRoute>
-              <EditJobPage updateJobSubmit={updateJob} />
+              <EditContactPage updateJobSubmit={updateJob} />
             </ProtectedRoute>
           }
           loader={jobLoader}
@@ -88,7 +88,7 @@ const App = () => {
           path="/contact/:id"
           element={
             <ProtectedRoute>
-              <JobPage deleteJob={deleteJob} />
+              <ContactPage deleteJob={deleteJob} />
             </ProtectedRoute>
           }
           loader={jobLoader}

@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 
-const EditJobPage = () => {
+const EditContactPage = () => {
     const { id } = useParams();
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -166,7 +166,7 @@ const EditJobPage = () => {
 
                         <div>
                             <button
-                                className='bg-black hover:bg-gray-500 text-white font-bold py-2 px-4 rounded-xl w-full focus:outline-none focus:shadow-outline'
+                                className='bg-black hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-xl w-full focus:outline-none focus:shadow-outline'
                                 type='submit'
                             >
                                 Update Contact
@@ -179,4 +179,4 @@ const EditJobPage = () => {
     );
 };
 
-export default EditJobPage;
+export default EditContactPage;

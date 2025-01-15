@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { FaStar, FaRegStar } from 'react-icons/fa';
 
-const AddJobPage = () => {
+const AddContactPage = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
@@ -42,7 +42,15 @@ const AddJobPage = () => {
 
             if (response.ok) {
                 const data = await response.json();
-                toast.success('Contact added successfully!');
+                // toast.success('Contact added successfully!');
+                toast.success('Contact added successfully!', {
+                    // position: 'top-center',
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                });
                 navigate('/jobs');
             } else {
                 const errorData = await response.json();
@@ -129,7 +137,7 @@ const AddJobPage = () => {
 
                         <div>
                             <button
-                                className='bg-black hover:bg-gray-500 text-white font-bold py-2 px-4 rounded-xl w-full focus:outline-none focus:shadow-outline'
+                                className='bg-black hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-xl w-full focus:outline-none focus:shadow-outline'
                                 type='submit'
                             >
                                 Add Contact
@@ -142,4 +150,4 @@ const AddJobPage = () => {
     );
 };
 
-export default AddJobPage;
+export default AddContactPage;
