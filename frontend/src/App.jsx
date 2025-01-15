@@ -33,7 +33,6 @@ const App = () => {
         <Route path="/verify" element={<VerifyPage />} />
         <Route path="/login" element={<LoginPage />} />
 
-        {/* Protected routes */}
         <Route
           path="/contacts"
           element={

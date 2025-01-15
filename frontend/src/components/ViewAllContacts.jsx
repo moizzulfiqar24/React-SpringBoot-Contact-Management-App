@@ -3,7 +3,7 @@ import React from 'react';
 const ViewAllContacts = () => {
     const handleDownload = async () => {
         try {
-            const authToken = localStorage.getItem('authToken'); // Get the bearer token from local storage
+            const authToken = localStorage.getItem('authToken');
 
             if (!authToken) {
                 alert('No authentication token found. Please log in.');
@@ -24,13 +24,11 @@ const ViewAllContacts = () => {
 
             const contacts = await response.json();
 
-            // Convert JSON data to CSV or XLSX format
-            const XLSX = await import('xlsx'); // Dynamically import to avoid build issues
+            const XLSX = await import('xlsx');
             const worksheet = XLSX.utils.json_to_sheet(contacts);
             const workbook = XLSX.utils.book_new();
             XLSX.utils.book_append_sheet(workbook, worksheet, 'Contacts');
 
-            // Create a downloadable Excel file
             const excelFile = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
             const blob = new Blob([excelFile], { type: 'application/octet-stream' });
             const url = window.URL.createObjectURL(blob);

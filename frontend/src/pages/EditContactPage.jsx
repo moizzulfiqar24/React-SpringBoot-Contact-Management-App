@@ -37,7 +37,7 @@ const EditContactPage = () => {
                     setPhone(data.phone);
                     setAddress(data.address);
                     setIsFavourite(data.isFavourite);
-                    setImage(null); // Reset the image to avoid pre-loading
+                    setImage(null); 
                 } else {
                     throw new Error('Failed to load contact details');
                 }
@@ -65,7 +65,7 @@ const EditContactPage = () => {
         }
 
         try {
-            const token = localStorage.getItem('authToken'); // Assuming the token is stored in localStorage
+            const token = localStorage.getItem('authToken'); 
             if (!token) {
                 throw new Error('User is not authenticated. Please log in.');
             }
@@ -80,7 +80,7 @@ const EditContactPage = () => {
 
             if (response.ok) {
                 toast.success('Contact updated successfully!');
-                navigate(`/contact/${id}`); // Navigate to the contact detail page after success
+                navigate(`/contact/${id}`); 
             } else {
                 const errorData = await response.json();
                 throw new Error(errorData.message || 'Failed to update contact');

@@ -6,14 +6,14 @@ import { toast } from 'react-toastify';
 const ContactPage = () => {
     const navigate = useNavigate();
     const { id } = useParams();
-    const contact = useLoaderData(); // Fetching contact data using the original loader
+    const contact = useLoaderData(); 
 
     const onDeleteClick = async (contactId) => {
         const confirm = window.confirm('Are you sure you want to delete this contact?');
 
         if (!confirm) return;
 
-        const token = localStorage.getItem('authToken'); // Authorization token
+        const token = localStorage.getItem('authToken'); 
         try {
             const res = await fetch(`http://localhost:8080/contact/${contactId}`, {
                 method: 'DELETE',
@@ -73,7 +73,6 @@ const ContactPage = () => {
                             </div>
                         </main>
 
-                        {/* Sidebar */}
                         <aside>
                             <div className="bg-white p-6 rounded-lg shadow-md">
                                 <h3 className="text-xl font-bold mb-6">Additional Info</h3>
@@ -118,7 +117,7 @@ const ContactPage = () => {
 };
 
 const contactLoader = async ({ params }) => {
-    const token = localStorage.getItem('authToken'); // Authorization token
+    const token = localStorage.getItem('authToken'); 
     const res = await fetch(`http://localhost:8080/contact/${params.id}`, {
         headers: {
             Authorization: `Bearer ${token}`,

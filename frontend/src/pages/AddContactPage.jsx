@@ -42,7 +42,6 @@ const AddContactPage = () => {
 
             if (response.ok) {
                 const data = await response.json();
-                // toast.success('Contact added successfully!');
                 toast.success('Contact added successfully!', {
                     // position: 'top-center',
                     autoClose: 3000,

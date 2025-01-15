@@ -5,8 +5,8 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
-        localStorage.removeItem('authToken'); // Remove token from localStorage
-        navigate('/login'); // Redirect to login page
+        localStorage.removeItem('authToken'); 
+        navigate('/login'); 
     };
 
     const linkClass = ({ isActive }) =>

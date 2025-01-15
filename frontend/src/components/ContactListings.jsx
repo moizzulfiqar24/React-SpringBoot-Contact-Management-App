@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ContactListing from './ContactListing'; // Reusing the same component name
+import ContactListing from './ContactListing'; 
 import Spinner from './Spinner';
 
 const ContactListings = ({ isHome = false }) => {
@@ -9,7 +9,7 @@ const ContactListings = ({ isHome = false }) => {
     useEffect(() => {
         const fetchContacts = async () => {
             const apiUrl = 'http://localhost:8080/contact/all';
-            const token = localStorage.getItem('authToken'); // Get auth token from localStorage
+            const token = localStorage.getItem('authToken'); 
 
             if (!token) {
                 console.error('No auth token found');
@@ -32,7 +32,6 @@ const ContactListings = ({ isHome = false }) => {
 
                 const data = await res.json();
 
-                // If isHome is true, filter only favourite contacts
                 const filteredContacts = isHome ? data.filter(contact => contact.isFavourite) : data;
 
                 setContacts(filteredContacts);
