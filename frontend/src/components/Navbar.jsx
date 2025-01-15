@@ -12,7 +12,7 @@ const Navbar = () => {
     const linkClass = ({ isActive }) =>
         isActive
             ? 'bg-white text-black hover:bg-gray-400 hover:text-white rounded-md px-3 py-2'
-            : 'text-white hover:bg-gray-400 hover:text-white rounded-md px-3 py-2';
+            : 'text-white hover:bg-gray-400 hover:text-white rounded-md px-3 py-2 border border-white';
 
     return (
         <nav className='bg-black border-b border-indigo-500'>
