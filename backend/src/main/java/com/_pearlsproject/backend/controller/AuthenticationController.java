@@ -31,14 +31,6 @@ public class AuthenticationController {
         return ResponseEntity.ok(registeredUser);
     }
 
-//    @PostMapping("/login")
-//    public ResponseEntity<LoginResponse> authenticate(@RequestBody LoginUserDto loginUserDto){
-//        User authenticatedUser = authenticationService.authenticate(loginUserDto);
-//        String jwtToken = jwtService.generateToken(authenticatedUser);
-//        LoginResponse loginResponse = new LoginResponse(jwtToken, jwtService.getExpirationTime());
-//        return ResponseEntity.ok(loginResponse);
-//    }
-
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> authenticate(@RequestBody LoginUserDto loginUserDto) {
         User authenticatedUser = authenticationService.authenticate(loginUserDto);
@@ -58,18 +50,6 @@ public class AuthenticationController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
-
-//    @PostMapping("/verify")
-//    public ResponseEntity<?> verifyUser(@RequestBody VerifyUserDto verifyUserDto) {
-//        System.out.println("Received email: " + verifyUserDto.getEmail() + ", code: " + verifyUserDto.getVerificationCode()); // Log request body
-//        try {
-//            authenticationService.verifyUser(verifyUserDto);
-//            return ResponseEntity.ok("Account verified successfully");
-//        } catch (RuntimeException e) {
-//            return ResponseEntity.badRequest().body("Verification failed: " + e.getMessage());
-//        }
-//    }
-
 
     @PostMapping("/resend")
     public ResponseEntity<?> resendVerificationCode(@RequestParam String email) {

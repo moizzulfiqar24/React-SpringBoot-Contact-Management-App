@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import contactImage from '../assets/images/contact.jpg'; 
+import contactImage from '../assets/images/contact.png';
 
 const LoginPage = () => {
     const [email, setEmail] = useState('');
@@ -64,7 +64,7 @@ const LoginPage = () => {
                 <img
                     src={contactImage}
                     alt="Contacts Background"
-                    className="w-full h-full object-cover opacity-10"
+                    className="w-full h-full object-cover opacity-70"
                 />
             </div>
 

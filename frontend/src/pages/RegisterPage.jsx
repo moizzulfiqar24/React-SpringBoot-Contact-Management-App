@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
-import contactImage from '../assets/images/contact.jpg'; 
+import contactImage from '../assets/images/contact.png';
 
 const RegisterPage = () => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
 
     const handleRegister = async (e) => {
         e.preventDefault();
@@ -44,7 +44,7 @@ const RegisterPage = () => {
 
             toast.success(`Registration successful! Please verify your account.`, {
                 // position: "top-center",
-                autoClose: 3000, 
+                autoClose: 3000,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -75,7 +75,7 @@ const RegisterPage = () => {
                 <img
                     src={contactImage}
                     alt="Contacts Background"
-                    className="w-full h-full object-cover opacity-10"
+                    className="w-full h-full object-cover opacity-70"
                 />
             </div>
 

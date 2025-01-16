@@ -42,7 +42,6 @@ public class ContactController {
                 "api_secret", apiSecret));
     }
 
-    // Create a new contact with image upload
     @PostMapping
     public ContactDTO newContact(
             @RequestParam("name") String name,
@@ -74,14 +73,13 @@ public class ContactController {
         newContact.setAddress(address);
         newContact.setImage(imageUrl);
         newContact.setFavourite(isFavourite);
-        newContact.setUser(user); // Set the current user as the contact owner
+        newContact.setUser(user);
 
         Contact savedContact = contactRepository.save(newContact);
         logger.info("Contact saved with ID: {}", savedContact.getId());
         return new ContactDTO(savedContact);
     }
 
-    // Get all contacts of the authenticated user
     @GetMapping("/all")
     public List<ContactDTO> getAllContacts(@AuthenticationPrincipal User user) {
         if (user == null) {
@@ -89,11 +87,10 @@ public class ContactController {
         }
 
         logger.info("Fetching contacts for user: {}", user.getEmail());
-        List<Contact> contacts = contactRepository.findByUser(user); // Fetch all contacts for the logged-in user
+        List<Contact> contacts = contactRepository.findByUser(user);
         return contacts.stream().map(ContactDTO::new).collect(Collectors.toList());
     }
 
-    // Get a specific contact by ID
     @GetMapping("/{id}")
     public ContactDTO getContactById(@PathVariable Long id, @AuthenticationPrincipal User user) {
         logger.info("Fetching contact with ID: {} for user: {}", id, user.getEmail());
@@ -103,7 +100,6 @@ public class ContactController {
         return new ContactDTO(contact);
     }
 
-    // Update a contact with the option to change the image
     @PutMapping("/{id}")
     public ContactDTO updateContact(
             @PathVariable Long id,
@@ -137,17 +133,15 @@ public class ContactController {
         return new ContactDTO(savedContact);
     }
 
-    // Delete a contact by ID
     @DeleteMapping("/{id}")
     public void deleteContact(@PathVariable Long id, @AuthenticationPrincipal User user) {
         logger.info("Deleting contact with ID: {} for user: {}", id, user.getEmail());
 
-        // Ensure the contact exists and belongs to the current user
         Contact contact = contactRepository.findById(id)
                 .filter(c -> c.getUser().getId().equals(user.getId()))
                 .orElseThrow(() -> new ContactNotFoundException(id));
 
-        contactRepository.delete(contact); // Delete the contact
+        contactRepository.delete(contact);
         logger.info("Contact with ID: {} deleted successfully.", id);
     }
 

@@ -14,14 +14,13 @@ public class Contact {
     private long phone;
     private String address;
 
-    private String image; // Store Cloudinary image URL
-    private boolean isFavourite = false; // Default value set to false
+    private String image;
+    private boolean isFavourite = false;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    // Getters and Setters
     public long getId() {
         return id;
     }

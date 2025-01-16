@@ -45,8 +45,6 @@ public class User implements UserDetails {
     public User() {
     }
 
-    // Getters and Setters
-
     public Long getId() {
         return id;
     }
