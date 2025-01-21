@@ -5,7 +5,7 @@ import com._pearlsproject.backend.model.Contact;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ContactDTO {
-    private Long id;  // Add the contact ID
+    private Long id;
     private String name;
     private String email;
     private long phone;
