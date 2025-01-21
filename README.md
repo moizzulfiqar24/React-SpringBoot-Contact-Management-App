@@ -13,7 +13,6 @@ A Contact Management application built using **React (Vite)**, **Spring Boot**, 
 7. [Frontend Development](#frontend-development)
 8. [Backend Development](#backend-development)
 9. [Project Preview](#project-preview)
-10. [License](#license)
 
 
 ## Features
@@ -138,6 +137,3 @@ Below are some screenshots of the website to give you an overview of its design 
 
 ### Add Contact Page
 ![Add Contact Preview](frontend/public/addcontact.png)
-
-## License
-This project is licensed under the MIT License. Feel free to use and modify it.
