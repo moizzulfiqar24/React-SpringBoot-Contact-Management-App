@@ -12,7 +12,7 @@ A Contact Management application built using **React (Vite)**, **Spring Boot**, 
 6. [Running the Application](#running-the-application)
 7. [Frontend Development](#frontend-development)
 8. [Backend Development](#backend-development)
-9. [Preview](#project-preview)
+9. [Project Preview](#project-preview)
 10. [License](#license)
 
 
