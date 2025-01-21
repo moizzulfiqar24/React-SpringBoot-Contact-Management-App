@@ -12,7 +12,8 @@ A Contact Management application built using **React (Vite)**, **Spring Boot**, 
 6. [Running the Application](#running-the-application)
 7. [Frontend Development](#frontend-development)
 8. [Backend Development](#backend-development)
-9. [License](#license)
+9. [Preview](#preview)
+10. [License](#license)
 
 
 ## Features
@@ -125,6 +126,18 @@ Replace the placeholders (`your-secret-key`, `your-email@example.com`, etc.) wit
 - Use the `src` folder to modify components, styles, and pages.
 - API calls are made to the backend server running on `http://localhost:8080`.
 
+# Project Preview
+
+Below are some screenshots of the website to give you an overview of its design and functionality.
+
+### Homepage
+![Homepage Preview](frontend/public/homepage.png)
+
+### All Contacts Page
+![All Contacts Preview](frontend/public/allcontacts.png)
+
+### Add Contact Page
+![Add Contact Preview](frontend/public/addcontact.png)
 
 ## License
 This project is licensed under the MIT License. Feel free to use and modify it.
