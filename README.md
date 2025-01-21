@@ -2,7 +2,6 @@
 
 A Contact Management application built using **React (Vite)**, **Spring Boot**, and **MySQL**. This application allows users to register, login, and manage their contacts with features like creating, updating, and deleting contacts.
 
----
 
 ## Table of Contents
 1. [Features](#features)
@@ -15,7 +14,6 @@ A Contact Management application built using **React (Vite)**, **Spring Boot**, 
 8. [Backend Development](#backend-development)
 9. [License](#license)
 
----
 
 ## Features
 - User registration and login.
@@ -25,7 +23,6 @@ A Contact Management application built using **React (Vite)**, **Spring Boot**, 
 - React-based frontend built with Vite.
 - REST API built with Spring Boot.
 
----
 
 ## Prerequisites
 Make sure you have the following installed on your system:
@@ -34,7 +31,6 @@ Make sure you have the following installed on your system:
 3. **MySQL Server**.
 4. **Maven** (for Spring Boot backend).
 
----
 
 ## Installation
 
@@ -50,7 +46,6 @@ Follow the instructions for your operating system to install MySQL:
 
 After installation, start the MySQL server.
 
----
 
 ## Database Setup
 
@@ -72,7 +67,6 @@ CREATE TABLE users (
 );
 ```
 
----
 
 ## Environment Variables
 
@@ -88,7 +82,6 @@ cloudinary_api_secret=your-cloudinary-api-secret
 
 Replace the placeholders (`your-secret-key`, `your-email@example.com`, etc.) with your actual values.
 
----
 
 ## Running the Application
 
@@ -103,7 +96,6 @@ Replace the placeholders (`your-secret-key`, `your-email@example.com`, etc.) wit
    ```
 3. The backend server will start on `http://localhost:8080`.
 
----
 
 ### Step 2: Frontend (React with Vite)
 1. Navigate to the frontend directory:
@@ -120,7 +112,6 @@ Replace the placeholders (`your-secret-key`, `your-email@example.com`, etc.) wit
    ```
 4. The frontend server will run on `http://localhost:3000`.
 
----
 
 ## Development Guide
 
@@ -134,7 +125,6 @@ Replace the placeholders (`your-secret-key`, `your-email@example.com`, etc.) wit
 - Use the `src` folder to modify components, styles, and pages.
 - API calls are made to the backend server running on `http://localhost:8080`.
 
----
 
 ## License
 This project is licensed under the MIT License. Feel free to use and modify it.
